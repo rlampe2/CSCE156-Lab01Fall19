@@ -6,7 +6,7 @@ public class StatisticsDemo {
 
 	public static void main(String args[]) {
 		
-		Scanner s = new Scanner(System.in);
+	/*	Scanner s = new Scanner(System.in);
 
 		System.out.println("Please input the number of integers being entered (>=2): ");
 		int n = s.nextInt();
@@ -21,6 +21,13 @@ public class StatisticsDemo {
 			array[i] = s.nextInt();
 		}
 		s.close();
+		*/
+		
+		int array[] = new int[args.length]; //filename isn't given as an args, so don't need -1
+		
+		for(int i = 0; i < args.length; i++) {
+			array[i] = Integer.parseInt(args[i]);
+		}
 		
 		int min = Statistics.getMin(array);
 		int max = Statistics.getMax(array);
