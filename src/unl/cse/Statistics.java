@@ -3,7 +3,17 @@ package unl.cse;
 public class Statistics {
 
 	public static int getSum(int array[]) {
-	  return 0;
+		
+		//if statements don't need braces if we are only executing one line based on it's condition
+		if(array == null || array.length < 1)
+			return 0;
+
+		
+		int sum = 0;
+		for(int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+	  return sum;
 	}
 	
 	public static double getAverage(int array[]) {
@@ -26,6 +36,17 @@ public class Statistics {
 	}
 	
 	public static int getMax(int array[]) {
-	  return 0;
+		//error checking:
+		if(array == null || array.length < 1) {
+			return 0;
+		}
+		
+		int max = array[0];
+		for(int i =1; i < array.length; i++) {
+			if(array[i] > max) {
+				max = array[i];
+			}
+		}
+	  return max;
 	}
 }
