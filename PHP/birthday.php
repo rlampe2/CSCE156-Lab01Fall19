@@ -3,9 +3,11 @@
   $months = array(
    1 => "January",
    2 => "February",
+   3 => "March",
    4 => "April",
    5 => "May",
    6 => "June",
+   7 => "July",
    8 => "August",
    9 => "September",
    10 => "October",
@@ -43,7 +45,9 @@
 	    <select name="date">
 	      <?php
 	        //TODO: create a loop to output the days of the month 1..31:
-
+	      for($i = 1; $i <= 31; $i++){
+	          print "<option value'" . $i . "'>" . $i . "</option>\n";
+	      }
               ?>
 	    </select>
             <select name="year">

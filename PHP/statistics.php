@@ -22,7 +22,16 @@ function getMin($array) {
 
 function getMax($array) {
   //TODO: implement this function
-  return null;
+    if($array == null || count($array) == 0){
+      return null;
+    }
+  $max = $array[0];
+  for($i = 1; $i < count($array); $i++){
+      if($max < $array[$i]){
+          $max = $array[$i];
+      }
+  }
+  return $max;
 }
 
 function getAverage($array) {
@@ -36,14 +45,25 @@ function getAverage($array) {
 
 function getSum($array) {
   //TODO: implement this function
-  return null;
+    if($array == null || count($array) == 0){
+        return null;
+    }
+    $sum = 0;
+    for($i = 0; $i < count($array); $i++){
+        $sum += $array[$i];
+    }
+    return $sum;
 }
 
-  echo "Please input the number of integers being entered (>=2): ";
+//Oh yea, there isn't really a main, it just runs top to bottom as it is interperated. 
+
+
+
+  //echo "Please input the number of integers being entered (>=2): ";
   /* variable identifiers begin with the dollar sign 
      as PHP is weakly typed, no type needs to be declared
    */
-  $numberOfEntries = intval(trim(fgets(STDIN)));
+ /* $numberOfEntries = intval(trim(fgets(STDIN)));
 
   if($numberOfEntries < 2) {
     print "Invalid input: number of entries must be at least 2\n";
@@ -54,13 +74,25 @@ function getSum($array) {
   echo "Enter your integers one at at time, followed by the enter key.\n";
   $count = 0;
   while($count < $numberOfEntries) {
-
+*/
     /* standard input can be scanned with fgets 
        elements can be appended using the following syntax  
      */
-    $numbers[] = intval(trim(fgets(STDIN)));
+ /*   $numbers[] = intval(trim(fgets(STDIN)));
     $count++;
   } //end of for loop
+  
+  */
+  
+  
+  //using CLAs now: 
+  $numbers = array();
+  
+  $numInputs = $argc;
+  
+  for($i = 1; $i < $numInputs; $i++){
+      $numbers[] = $argv[$i]; //this just appends onto the end of the array. Cool!
+  }
 
   $min = getMin($numbers);
   $max = getMax($numbers);
